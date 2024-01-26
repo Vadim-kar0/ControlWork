@@ -9,10 +9,6 @@
 
   958  ls
 
-  959  ls tree
-
-  960  tree
-
   961  mn addiction.txt "Human Friends".txt
 
   962  mv addiction.txt "Human Friends".txt
