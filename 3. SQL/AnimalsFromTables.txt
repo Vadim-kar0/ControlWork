@@ -1,0 +1,20 @@
+Name,Birthday,Commands,Genus_name
+Horse1,2020-01-01,horse_voice,Horses
+Horse2,2022-01-01,"horse_sit, horse_come, horse_voice",Horses
+Horse3,2022-01-01,"horse_sit, horse_come",Horses
+Horse4,2023-01-01,horse_sit,Horses
+Donkey1,2020-01-01,"donkey_sit, donkey_come, donkey_voice",Donkeys
+Donkey2,2022-01-01,"donkey_sit, donkey_come",Donkeys
+Donkey3,2022-01-01,donkey_sit,Donkeys
+Donkey4,2023-01-01,donkey_voice,Donkeys
+Cat1,2020-01-01,"cat_sit, cat_come, cat_voice",Cats
+Cat3,2022-01-01,"cat_sit, cat_come",Cats
+Cat2,2023-01-01,cat_sit,Cats
+Dog1,2020-01-01,"dog_sit, dog_come, dog_voice",Dogs
+Dog2,2022-01-01,"dog_sit, dog_come",Dogs
+Dog3,2022-01-01,dog_sit,Dogs
+Dog4,2023-01-01,dog_voice,Dogs
+Hamster1,2020-01-01,humster_come,Humsters
+Hamster2,2022-01-01,"humster_sit, humster_come, humster_voice",Humsters
+Hamster3,2022-01-01,"humster_sit, humster_come",Humsters
+Hamster4,2023-01-01,humster_sit,Humsters
