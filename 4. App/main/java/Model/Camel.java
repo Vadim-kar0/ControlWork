@@ -8,4 +8,5 @@ public class Camel extends PackAnimal{
         super(name, birthday, commands);
         setAnimalGenus(AnimalGenus.CAMEL);
     }
+
 }

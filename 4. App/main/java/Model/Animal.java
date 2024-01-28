@@ -19,6 +19,7 @@ public abstract   class Animal implements  Comparable<Animal>{
         this.commands = commands;
     }
 
+
     public Animal(String name, LocalDate birthday) {
         this.name = name;
         this.birthday = birthday;
@@ -75,7 +76,7 @@ public abstract   class Animal implements  Comparable<Animal>{
                 ", animalGenius=" + animalGenus +
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +
-                ", commands=" + commands.toString() +
+                ", commands=" + commands +
                 "}\n";
     }
 

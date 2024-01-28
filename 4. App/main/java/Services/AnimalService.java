@@ -189,28 +189,26 @@ public class AnimalService implements AnimalInterface{
     LocalDate d = LocalDate.ofEpochDay(2020-10-10);
 
     public void addFewAnimals() {
-        List<Animal> list = new ArrayList<>();
-        String[] arr = {"Run","Fun","Jump"};
-        List<String> com = Arrays.asList(arr);
-        list.add(new Horse("Horse1", LocalDate.ofEpochDay(2020-11-21),com));
-        list.add(new Horse("Horse2",LocalDate.ofEpochDay(2022-11-21), com));
-        list.add(new Horse("Horse3",LocalDate.ofEpochDay(2022- 1 - 1),com));
-        list.add(new Horse("Horse4",LocalDate.ofEpochDay(2023- 1 - 1),com));
-        list.add(new Donkey("Donkey1",LocalDate.ofEpochDay(2020-11-21),com));
-        list.add(new Donkey("Donkey2",LocalDate.ofEpochDay(2022-11-21),com));
-        list.add(new Donkey("Donkey3",LocalDate.ofEpochDay(2022-11-21),com));
-        list.add(new Donkey("Donkey4",LocalDate.ofEpochDay(2023-11-21),com));
-        list.add(new Cat("Cat1",LocalDate.ofEpochDay(2020-11-21),com));
-        list.add(new Cat("Cat3",LocalDate.ofEpochDay(2022-11-21),com));
-        list.add(new Cat("Cat2",LocalDate.ofEpochDay(2023-11-21),com));
-        list.add(new Dog("Dog1",LocalDate.ofEpochDay(2020-11-11),com));
-        list.add(new Dog("Dog2",LocalDate.ofEpochDay(2022-11-11),com));
-        list.add(new Dog("Dog3",LocalDate.ofEpochDay(2022-11-11),com));
-        list.add(new Dog("Dog4",LocalDate.ofEpochDay(2023-11-11),com));
-        list.add(new Hamster("Hamster1",LocalDate.ofEpochDay(2020-11-11),com));
-        list.add(new Hamster("Hamster2",LocalDate.ofEpochDay(2022-11-11),com));
-        list.add(new Hamster("Hamster3",LocalDate.ofEpochDay(2022-11-11),com));
-        list.add(new Hamster("Hamster4",LocalDate.ofEpochDay(2023-11-11),com));
+        List<Animal> list = new ArrayList<>(getAnimals());
+        list.add(new Horse("Horse1",LocalDate.of(2020,11,21),new ArrayList<>()));
+        list.add(new Horse("Horse2",LocalDate.of(2022,11,21),new ArrayList<>()));
+        list.add(new Horse("Horse3",LocalDate.of(2022,1,21),new ArrayList<>()));
+        list.add(new Horse("Horse4",LocalDate.of(2023,1,21),new ArrayList<>()));
+        list.add(new Donkey("Donkey1",LocalDate.of(2020,11,21),new ArrayList<>()));
+        list.add(new Donkey("Donkey2",LocalDate.of(2022,11,21),new ArrayList<>()));
+        list.add(new Donkey("Donkey3",LocalDate.of(2022,11,21),new ArrayList<>()));
+        list.add(new Donkey("Donkey4",LocalDate.of(2023,11,21),new ArrayList<>()));
+        list.add(new Cat("Cat1",LocalDate.of(2020,11,21),new ArrayList<>()));
+        list.add(new Cat("Cat3",LocalDate.of(2022,11,21),new ArrayList<>()));
+        list.add(new Cat("Cat2",LocalDate.of(2023,11,21),new ArrayList<>()));
+        list.add(new Dog("Dog1",LocalDate.of(2020,11,11),new ArrayList<>()));
+        list.add(new Dog("Dog2",LocalDate.of(2022,11,11),new ArrayList<>()));
+        list.add(new Dog("Dog3",LocalDate.of(2022,11,11),new ArrayList<>()));
+        list.add(new Dog("Dog4",LocalDate.of(2023,11,11),new ArrayList<>()));
+        list.add(new Hamster("Hamster1",LocalDate.of(2020,11,11),new ArrayList<>()));
+        list.add(new Hamster("Hamster2",LocalDate.of(2022,11,11),new ArrayList<>()));
+        list.add(new Hamster("Hamster3",LocalDate.of(2022,11,11),new ArrayList<>()));
+        list.add(new Hamster("Hamster4",LocalDate.of(2023,11,11),new ArrayList<>()));
         setAnimals(list);
     }
 }
