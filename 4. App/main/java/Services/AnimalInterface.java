@@ -5,7 +5,7 @@ import Model.Animal;
 import java.util.List;
 
 public interface AnimalInterface {
-    public void addNewAnimal();
+    public void addNewAnimal() throws IllegalStateException;
     public String getCommandsLastAnimal();
     public String getCommandsAnimalById();
     public void addCommandToAnimalById();
