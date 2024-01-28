@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Animal {
+public abstract   class Animal implements  Comparable<Animal>{
     private static int counter;
     private final int id = ++counter;
-    private AnimalGenius animalGenius;
+    private AnimalGenus animalGenus;
     private String name;
     private LocalDate birthday;
     private List<String> commands;
@@ -19,12 +19,12 @@ public abstract class Animal {
         this.commands = new ArrayList<>();
     }
 
-    public AnimalGenius getAnimalGenius() {
-        return animalGenius;
+    public AnimalGenus getAnimalGenus() {
+        return animalGenus;
     }
 
-    public void setAnimalGenius(AnimalGenius animalGenius) {
-        this.animalGenius = animalGenius;
+    public void setAnimalGenus(AnimalGenus animalGenus) {
+        this.animalGenus = animalGenus;
     }
 
     public String getName() {
@@ -70,14 +70,24 @@ public abstract class Animal {
     }
 
 
+
     @Override
     public String toString() {
         return "Animal{" +
                 "id=" + id +
-                ", animalGenius=" + animalGenius +
+                ", animalGenius=" + animalGenus +
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +
                 ", commands=" + commands +
-                '}';
+                "}\n";
     }
+
+    @Override
+    public int compareTo(Animal o) {
+        if(getBirthday() == null || o.getBirthday() == null)
+            return 0;
+        return getBirthday().compareTo(o.getBirthday());
+    }
+
+
 }

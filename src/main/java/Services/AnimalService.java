@@ -1,10 +1,15 @@
 package Services;
 
 import Model.Animal;
+import Model.AnimalGenus;
+import Services.ModelService.AnimalComparatorByBirthday;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static java.util.Collections.sort;
 
 public class AnimalService implements AnimalInterface{
     private List<Animal> animals;
@@ -23,10 +28,12 @@ public class AnimalService implements AnimalInterface{
 
     @Override
     public void addNewAnimal() {
-        List<Animal> a = getAnimals();
-        a.add(animal);
-        setAnimals(a);
-        System.out.println("successfully added");
+        Scanner scanner = new Scanner(System.in);
+        AnimalGenus ag;
+        String name;
+        LocalDate date;
+        List<String> commands = new ArrayList<>();
+
 
     }
 
@@ -66,14 +73,17 @@ public class AnimalService implements AnimalInterface{
         newCommand = scanner.nextLine();
         commands.add(newCommand);
         animal.setCommands(commands);
-        this.animals = animals;
-
+        animals.set(i-1,animal);
+        System.out.println("successfully added");
     }
 
     @Override
     public void showAllAnimalSortByBirthday() {
-
-
+        List<Animal> list = getAnimals();
+        list.sort(new AnimalComparatorByBirthday<Animal>());
+        for (Animal animal : list) {
+            System.out.println(animal);
+        }
     }
 
     @Override
