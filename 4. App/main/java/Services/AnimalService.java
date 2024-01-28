@@ -4,16 +4,16 @@ import Model.*;
 import Services.ModelService.AnimalComparatorByBirthday;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.util.Collections.sort;
 
 public class AnimalService implements AnimalInterface{
+
+
     private List<Animal> animals;
 
-    public AnimalService(List<Animal> animals) {
+    public AnimalService() {
         this.animals = new ArrayList<Animal>();
     }
 
@@ -137,46 +137,34 @@ public class AnimalService implements AnimalInterface{
         animals.add(animal);
         setAnimals(animals);
         System.out.println("successfully added");
-}
-
-    @Override
-    public String getCommandsLastAnimal() {
-    String result;
-    Animal animal = getAnimals().get(-1);
-    result = animal.getCommands().toString();
-    return result;
     }
 
     @Override
-    public String getCommandsAnimalById() {
+    public void getCommandsAnimalById() {
     Scanner scanner = new Scanner(System.in);
     String result;
     System.out.println("Write animal id");
     int i = scanner.nextInt();
     Animal animal = getAnimals().get(i-1);
     result = animal.getCommands().toString();
-    return result;
+    System.out.println(result);
     }
 
     @Override
     public void addCommandToAnimalById() {
     Scanner scanner = new Scanner(System.in);
-    List<String> commands;
-    List<Animal> animals = null;
-    String newCommand;
-
-    System.out.println("Write animal id");
+    List<Animal> animals = getAnimals();
+    System.out.println("Write id");
     int i = scanner.nextInt();
-    Animal animal = getAnimals().get(i-1);
-    commands = animal.getCommands();
-    System.out.println("Animal has commands = ");
-    System.out.print(commands);
-    System.out.println("Write new command");
-    newCommand = scanner.nextLine();
-    commands.add(newCommand);
-    animal.setCommands(commands);
+    Animal animal = animals.get(i - 1);
+    System.out.println("Write new command:");
+    Scanner scanner1 = new Scanner(System.in);
+    String newCommand = scanner1.nextLine();
+    animal.addCommand(newCommand);
     animals.set(i-1,animal);
-    System.out.println("successfully added");
+    setAnimals(animals);
+
+
     }
 
     @Override
@@ -190,8 +178,39 @@ public class AnimalService implements AnimalInterface{
 
     @Override
     public void showAmountAllAddAnimals() {
-
     System.out.println(Animal.getCounter());
+    }
 
+    public void showAllAnimals(){
+        System.out.println(getAnimals());
     }
+
+
+    LocalDate d = LocalDate.ofEpochDay(2020-10-10);
+
+    public void addFewAnimals() {
+        List<Animal> list = new ArrayList<>();
+        String[] arr = {"Run","Fun","Jump"};
+        List<String> com = Arrays.asList(arr);
+        list.add(new Horse("Horse1", LocalDate.ofEpochDay(2020-11-21),com));
+        list.add(new Horse("Horse2",LocalDate.ofEpochDay(2022-11-21), com));
+        list.add(new Horse("Horse3",LocalDate.ofEpochDay(2022- 1 - 1),com));
+        list.add(new Horse("Horse4",LocalDate.ofEpochDay(2023- 1 - 1),com));
+        list.add(new Donkey("Donkey1",LocalDate.ofEpochDay(2020-11-21),com));
+        list.add(new Donkey("Donkey2",LocalDate.ofEpochDay(2022-11-21),com));
+        list.add(new Donkey("Donkey3",LocalDate.ofEpochDay(2022-11-21),com));
+        list.add(new Donkey("Donkey4",LocalDate.ofEpochDay(2023-11-21),com));
+        list.add(new Cat("Cat1",LocalDate.ofEpochDay(2020-11-21),com));
+        list.add(new Cat("Cat3",LocalDate.ofEpochDay(2022-11-21),com));
+        list.add(new Cat("Cat2",LocalDate.ofEpochDay(2023-11-21),com));
+        list.add(new Dog("Dog1",LocalDate.ofEpochDay(2020-11-11),com));
+        list.add(new Dog("Dog2",LocalDate.ofEpochDay(2022-11-11),com));
+        list.add(new Dog("Dog3",LocalDate.ofEpochDay(2022-11-11),com));
+        list.add(new Dog("Dog4",LocalDate.ofEpochDay(2023-11-11),com));
+        list.add(new Hamster("Hamster1",LocalDate.ofEpochDay(2020-11-11),com));
+        list.add(new Hamster("Hamster2",LocalDate.ofEpochDay(2022-11-11),com));
+        list.add(new Hamster("Hamster3",LocalDate.ofEpochDay(2022-11-11),com));
+        list.add(new Hamster("Hamster4",LocalDate.ofEpochDay(2023-11-11),com));
+        setAnimals(list);
     }
+}

@@ -16,6 +16,12 @@ public abstract   class Animal implements  Comparable<Animal>{
     public Animal(String name, LocalDate birthday, List<String> commands) {
         this.name = name;
         this.birthday = birthday;
+        this.commands = commands;
+    }
+
+    public Animal(String name, LocalDate birthday) {
+        this.name = name;
+        this.birthday = birthday;
         this.commands = new ArrayList<>();
     }
 
@@ -59,18 +65,9 @@ public abstract   class Animal implements  Comparable<Animal>{
         this.commands = commands;
     }
 
-    public void addCommand(Animal animal, String comandName){
-        if (animal.getCommands().contains(comandName)) {
-            System.out.println("Hi has known this command");
-        } else {
-            List<String> list = getCommands();
-            list.add(comandName);
-            animal.setCommands(list);
-        }
+    public void addCommand(String command){
+        this.commands.add(command);
     }
-
-
-
     @Override
     public String toString() {
         return "Animal{" +
@@ -78,7 +75,7 @@ public abstract   class Animal implements  Comparable<Animal>{
                 ", animalGenius=" + animalGenus +
                 ", name='" + name + '\'' +
                 ", birthday=" + birthday +
-                ", commands=" + commands +
+                ", commands=" + commands.toString() +
                 "}\n";
     }
 

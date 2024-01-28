@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface AnimalInterface {
     public void addNewAnimal() throws IllegalStateException;
-    public String getCommandsLastAnimal();
-    public String getCommandsAnimalById();
+    public void getCommandsAnimalById();
     public void addCommandToAnimalById();
     public void showAllAnimalSortByBirthday();
     public void showAmountAllAddAnimals();
